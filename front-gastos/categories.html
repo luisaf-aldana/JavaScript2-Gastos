@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Categorías</title>
+
+    <link rel="stylesheet" href="css/dashboard.css" />
+  </head>
+  <body>
+    <div class="container">
+      <nav class="navbar">
+        <ul>
+          <li><a href="categories.html" id="categoriesLink">Categorías</a></li>
+          <li><a href="expenses.html" id="expensesLink">Gastos</a></li>
+          <li><a href="#" id="logout">Cerrar sesión</a></li>
+        </ul>
+      </nav>
+      <h1>Gestión de Categorías</h1>
+
+      <!-- Formulario para agregar o editar categorías -->
+      <div class="form-container">
+        <form id="categoryForm">
+          <input type="hidden" id="categoryId" value="" />
+          <!-- Campo oculto para el ID -->
+          <label for="categoryName">Nombre de la categoría:</label>
+          <input
+            type="text"
+            id="categoryName"
+            placeholder="Escribe una categoría"
+            required
+          />
+          <div class="buttons">
+            <button type="button" id="saveCategory">Guardar</button>
+            <button type="button" id="updateCategory" style="display: none">
+              Actualizar
+            </button>
+            <button type="button" id="cancelUpdate" style="display: none">
+              Cancelar
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Listado de categorías -->
+      <div class="list-container">
+        <h2>Categorías existentes</h2>
+        <ul id="categoryList">
+          <!-- Aquí se agregarán dinámicamente las categorías -->
+        </ul>
+      </div>
+    </div>
+
+    <script src="src/dashboard/categories.js" type="module"></script>
+    <script src="src/main.js" type="module"></script>
+  </body>
+</html>
